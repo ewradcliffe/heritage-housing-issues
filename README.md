@@ -117,25 +117,26 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ### Page 1: Quick project summary
-	- Project Terms & Jargon
-	- Describe Project Dataset
-	- State Business Requirements
+* 1 - Project Terms & Jargon
+* 2 - Describe Project Dataset
+* 3 - State Business Requirements
 
 ### Page 2: Findings 
-Detail which features are most important in determining house prices.
-Demonstrate the proof.
+* 1 - Detail which features are most important in determining house prices.
+* 2 - Demonstrate the proof.
 
 ### Page 3: Display 4 houses' attributes and their respective predicted sale price. 
-Display a message informing the summed predicted price for all 4 inherited houses.
-Add interactive input widgets that allow a user to provide real-time house data to predict the sale price. Note to future self. When creating the input widgets for house price prediction, it is critical that the input features are input into the model in the same order that was used when the model was trained. Refer back to the lesson for the code.
+* 1 - Display a message informing the summed predicted price for all 4 inherited houses.
+* 2 - Add interactive input widgets that allow a user to provide real-time house data to predict the sale price.
+* 3 -  When creating the input widgets for house price prediction, it is critical that the input features are input into the model in the same order that was used when the model was trained. Refer back to the lesson for the code.
 
 ### Page 4: Hypothesis
-List Hypothosis
-Explain how these were validated
+* 1 - List Hypothosis
+* 2 - Explain how these were validated
 
 ### Page 5: Peformance (For technical users)
-DIsplay model Performance
-Display ML pipeline.
+* 1 - Display model Performance
+* 2 - Display ML pipeline.
 
 
 ## Unfixed Bugs
@@ -200,19 +201,13 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Content
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+* The business case was taken from [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from The Code Institute
+* This ReadMe was based on [milestone-project-heritage-housing-issues](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues) from The Code Institute
 
 ### Media
 
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
 
 ## Acknowledgements (optional)
 
