@@ -1,46 +1,5 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+# Heritage Housing.
+The objective of this project is to analyse a dataset to predict housing prices in Ames Iowa.
 
 ## Dataset Content
 
@@ -76,6 +35,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Business Requirements
 
+The business requirements are defined in [Handbook: Heritage Housing Issues](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PA_PAGPPF+2/courseware/bde016cdbd184cdeafd341a73807e138/bd2104eb84de4e48a9df6f685773cbf2/) from The Code Institute.
+
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
 
 Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
@@ -83,28 +44,130 @@ Although your friend has an excellent understanding of property prices in her ow
 * 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
 * 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
+
+#### Is there any business requirement that can be answered with conventional data analysis?
+* 1 -  Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
+
+#### Does the client need a dashboard or an API endpoint?
+* 1 - The client needs a dashboard
+
+#### What does the client consider as a successful project outcome?
+* 1 - A study showing the most relevant variables correlated to sale price.
+* 2 - Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
+
+#### Can you break down the project into Epics and User Stories?
+* 1 - Information gathering and data collection.
+* 2 - Data visualisation, cleaning, and preparation.
+* 3 - Model training, optimization and validation.
+* 4 - Dashboard planning, designing, and development.
+* 5 - Dashboard deployment and release.
+
+#### Ethical or Privacy concerns?
+* 1 - No. The client found a public dataset.
+
+#### Does the data suggest a particular model?
+* 1 - The data suggests a regressor where the target is the sale price.
+
+#### What are the model's inputs and intended outputs?
+* 1 - The inputs are house attribute information and the output is the predicted sale price.
+
+#### What are the criteria for the performance goal of the predictions?
+* 1 - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+
+#### How will the client benefit?
+* 1 - The client will maximize the sales price for the inherited properties.
+
+
 ## Hypothesis and how to validate?
 
 * List here your project hypothesis(es) and how you envision validating it (them).
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+* Heuristics: We expect there to be a positive correlation between size of the house, the condition of the house and Sales price.
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
+- **Business Requirement 1:** The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualisations of the correlated variables against the sale price.
+
+* 1 -  We will inspect the data related to house prices
+* 2 - We will perform Pearson and Spearman correlation studies to investigate how the variables are related to Sale Price.
+* 3 - We can extract the most important variables.
+* 5 - We will plot the main variables against Sale Price to assist the client in visualising the relationship between them.
+* 6 - We will display this on the dashboard.
+
+
+- **Business Requirement 2:** The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
+* 1 - We want to be able to predict the best sale price of the clients houses. We want to use an ML model based on regression analysis.
+* 2 - We can train, validate and test the model using the data provided. 
+* 3 - We can use this model to provide the client with estimations as to the best sale price for her houses, and display it on the dashboard.
+* 4 - We can add input widgets for the most important variables to the dashboard, so the client can see the potential Sale Price of any other house in Ames, Iowa.
 
 ## ML Business Case
+### Predict house prices
+#### Regression Model
+* 1 - We want an ML model to predict the highest sale price based on the data collected. As the target variable is price, a regression model is most appropriate. We want to be able to output a single figure - price. 
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+* 2 - The ideal outcome is to be able to provide our client with a tool for accurately predicting house prices and an understanding of what the most important variables for determining house prices are.
+
+* 3 - We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
+
+* 4 - We can also investigate different models for a better R2 score,
+
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+
+### Page 1: Quick project summary
+	- Project Terms & Jargon
+	- Describe Project Dataset
+	- State Business Requirements
+
+### Page 2: Findings 
+Detail which features are most important in determining house prices.
+Demonstrate the proof.
+
+### Page 3: Display 4 houses' attributes and their respective predicted sale price. 
+Display a message informing the summed predicted price for all 4 inherited houses.
+Add interactive input widgets that allow a user to provide real-time house data to predict the sale price. Note to future self. When creating the input widgets for house price prediction, it is critical that the input features are input into the model in the same order that was used when the model was trained. Refer back to the lesson for the code.
+
+### Page 4: Hypothesis
+List Hypothosis
+Explain how these were validated
+
+### Page 5: Peformance (For technical users)
+DIsplay model Performance
+Display ML pipeline.
+
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
 ## Deployment
+
+### To fork
+
+1. Log into Github, or create an account. 
+
+2. Click 'Create fork' and select '+ Create new fork'
+
+3. Once the repo has been created, Click the 'Code' button and copy the URL.
+
+4. Log into the cloud-based IDE with your GitHub account.
+
+5. On your Dashboard, click on the Create button
+
+6. Paste in the URL you copied from GitHub earlier
+
+7. Click Create
+
+8. Wait for the workspace to open. This can take a few minutes.
+
+9. Open a new terminal and `pip3 install -r requirements.txt`
+
+10. Open the jupyter_notebooks directory and click on the notebook you want to open.
+
+11. Click the kernel button and choose Python Environments.
+
+Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
 
 ### Heroku
 
@@ -118,6 +181,18 @@ Although your friend has an excellent understanding of property prices in her ow
 4. Select the branch you want to deploy, then click Deploy Branch.
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+
+## Cloud IDE Reminders
+
+To log into the Heroku toolbelt CLI:
+
+1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
+2. Scroll down to the *API Key* and click *Reveal*
+3. Copy the key
+4. In your Cloud IDE, from the terminal, run `heroku_config`
+5. Paste in your API key when asked
+
+You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -140,7 +215,6 @@ Although your friend has an excellent understanding of property prices in her ow
 * The images used for the gallery page were taken from this other open-source site
 
 ## Acknowledgements (optional)
-
 
 * In case you would like to thank the people that provided support through this project.
 
